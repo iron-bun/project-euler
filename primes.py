@@ -17,3 +17,12 @@ def primes(n):
                 m=2*i+3
         return [2]+[x for x in s if x]
 
+def prime_factors(n, prime_list):
+    factors = []
+    for i in prime_list:
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+        if n == 1:
+            break
+    return factors
