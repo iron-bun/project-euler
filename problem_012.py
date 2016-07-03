@@ -18,7 +18,7 @@
 #What is the value of the first triangle number to have over five hundred divisors?
 
 import primes
-import itertools
+import factors
 
 def triangle_generator():
     tmp = 1
@@ -26,20 +26,10 @@ def triangle_generator():
         yield tmp * (tmp+1) // 2
         tmp += 1
 
-def factors(factor_list):
-    ans = set([1])
-    for i in range(len(factor_list) + 1):
-        for j in itertools.combinations(factor_list, i):
-            tmp = 1
-            for k in j:
-                tmp *= k
-            ans.add(tmp)
-    return ans
-
 prime_list = primes.primes(1000000)
 
 for t in triangle_generator():
-    tmp = factors(primes.prime_factors(t, prime_list))
+    tmp = factors.factors(primes.prime_factors(t, prime_list))
     if len(tmp) > 500:
         print(t)
         exit()
