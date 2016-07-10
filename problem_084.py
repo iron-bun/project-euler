@@ -22,15 +22,17 @@ states = [[0 for i in range(120)] for board in range(120)]
 for start, board in enumerate(states):
 
     for throw in throws:
-          destination = (start+throw[0]+throw[1])%40
-          if throw[0] != throw[1]:
-              pass
-          elif start >= 80:
-              destination = 10
-          elif start >= 40:
-              destination += 80
-          else:
+          destination = start+throw[0]+throw[1]
+          if destination//40 > start//40:
+              destination -= 40
+
+          if throw[0] == throw[1]:
               destination += 40
+          else:
+              destination %= 40
+
+          if destination >= 120:
+              destination = 10
 
           board[destination] += 1
 
