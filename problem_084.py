@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#https://projecteuler.net/probabilitylem=84
+#https://projecteuler.net/problem=84
 
 #Rules:
 #Three doubles goes to jail and resets the doubles count
