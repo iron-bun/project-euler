@@ -50,7 +50,7 @@ def find_squares(word, anagrams, minimum):
                     minimum = max(word_value, tmp)
                     yield word_value
 
-with open('p098_words.txt') as f:
+with open('data/p098_words.txt') as f:
     word_list = f.read().split(",")
     word_list = [v.strip("\"") for v in word_list]
     word_list = sorted(word_list, key=len, reverse = True)
