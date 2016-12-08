@@ -189,7 +189,7 @@ def solve(sudoku, level=1):
     return sudoku
 
 total = 0
-for name, sudoku in generate_sudoku('p096_sudoku.txt'):
+for name, sudoku in generate_sudoku('data/p096_sudoku.txt'):
     print(name)
     pad(sudoku)
     ans = eliminate(sudoku)
