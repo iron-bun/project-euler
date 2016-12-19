@@ -24,7 +24,7 @@ for i in pascals_triangle(51):
     for j in i:
         digits.add(j)
 
-p_squares = prime_squares(primes.primes(int(max(digits)**0.5)))
+p_squares = prime_squares(primes.primes(int(max(digits)**0.25)))
 
 ans = 0
 for d in digits:
