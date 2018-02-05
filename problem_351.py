@@ -45,8 +45,8 @@ def combos(values, max_product, pos=0):
 def solve(n):
     ans = n-1
 
-    prime_list = primes.primes(int(n))
-    for i in combos(prime_list, n):
+    prime_list = primes.primes(int(n/2))
+    for i in combos(prime_list, n/2):
         tmp = product(i)
         tmp = triangle((n-tmp)//tmp)
         if len(i) % 2 == 0:
